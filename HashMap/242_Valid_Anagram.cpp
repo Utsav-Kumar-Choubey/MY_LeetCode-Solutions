@@ -1,5 +1,5 @@
 #include<iostream>
-#include <unordered_set>
+#include <unordered_map>
 using namespace std;
 class Solution {
 public:
@@ -15,20 +15,31 @@ public:
         // * M-2 TC = O(n) using Hash Map
 
         /*
+        ==================================================
         LeetCode 242 - Valid Anagram
 
+        Problem:
+        https://leetcode.com/problems/valid-anagram/
+
+        Topic:
+        Hash Map
+
+        Difficulty:
+        Easy
+
         Approach:
-        1. Count frequency of characters in first string.
-        2. Decrease frequency using second string.
-        3. If every frequency becomes zero,
-        both strings are anagrams.
+        1. Count the frequency of each character in the first string.
+        2. Decrease the frequency using the second string.
+        3. If every character's frequency becomes 0, both strings are anagrams.
 
-        Time Complexity : O(n)
+        Time Complexity: O(n)
+        Space Complexity: O(n)
 
-        Space Complexity : O(n)
+        Date Solved: 27-07-2026
+        ==================================================
         */
 
-        if(s.length()!=t.length()) return false;
+        if(s.size()!=t.size()) return false;
         unordered_map<char,int> freq;
         // count freqency in first string
         for(char ch : s){
